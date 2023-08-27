@@ -1,0 +1,22 @@
+name: reactpracone
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Installing Node
+        uses: actions/setup-node@v2-beta
+
+      - name: Installing surge
+        run: npm install --global surge
+
+      - name: Deploying using surge
+        run: surge ./ reactTask1.surge.sh --token ${{ secrets.KEY }}
