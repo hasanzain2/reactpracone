@@ -1,4 +1,4 @@
-name: reactpracone
+name: reactone
 
 on:
   push:
@@ -19,4 +19,4 @@ jobs:
         run: npm install --global surge
 
       - name: Deploying using surge
-        run: surge ./ reactTask1.surge.sh --token ${{ secrets.KEY }}
+        run: surge ./ reacttaskone.surge.sh --token ${{ secrets.KEY }}
